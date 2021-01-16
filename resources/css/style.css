@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&family=Roboto:wght@100&display=swap');
+
+html * {
+    font-family: 'Libre Franklin', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: gray;
+}
+
+h1, h2, h3, .contact-text {
+    color: white;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 4px 20px;
+}
+
+nav :not(:first-child){
+    margin-left: 5px;
+}
+
+#prints-header {
+    background-color: red;
+}
+
+#prints-header a:hover {
+    color: black;
+}
+
+#prints .text-box a {
+    color: red;
+}
+
+#nmdr1-header {
+    background-color: rgb(54, 0, 54);
+}
+#cadeira-header {
+    background-color: olive;
+}
+#vases-header {
+    background-color: rgb(179, 159, 134);
+}
+#terra-header {
+    background-color: rgb(63, 73, 83);
+}
+#interiors-header {
+    background-color: rgb(65, 37, 11);
+}
+
+.text-box * {
+    color: black;
+}
+
+.text-box h3 {
+    text-align: center;
+}
+
+/*LAYOUT & POSITIONING*/
+
+.content-header {
+    min-height: 30px;
+}
+
+.content-header a {
+    font-size: 0.7rem;
+}
+
+.content-wrapper {
+    padding-top: 30px;
+}
+
+.mobile {
+    display: none;
+}
+
+/*LAYOUT home page*/
+
+.home-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.home-wrapper header {
+    width: 100%;
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    height: 2.5vw;
+    justify-content: space-between;
+}
+
+.home-wrapper h1 {
+    margin: 0 30px;
+}
+
+nav.mobile {
+    display: none;
+    padding: 10px;
+    background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+
+    .home-wrapper header {
+        height: 8vw;
+        top: 40%;
+        transform: translateY(-50%);
+        justify-content: flex-end;
+    }
+
+    nav.mobile {        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* LAYOUT content pages > HEADER and NAVIGATION*/
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar :first-child {
+    position: absolute;
+    left: 20px;
+}
+
+header h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.content-wrapper > .text-box {
+    margin: 30px 30vw;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .content-wrapper > .text-box {
+        margin: 30px 15vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content-wrapper > .text-box {
+        margin: 30px 20px;
+    }
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+}
+
+
+/* LAYOUT about > contact*/
+
+.text-box a {
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+.text-box a:hover {
+    color: lightgray;
+}
+
+.contact-info {
+    position: relative;
+}
+
+.contact-info img {
+    z-index: -1;
+    width: 100%;
+}
+
+.contact-text {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20vw;
+    line-height: 1.2rem;
+}
+
+.contact-text h3 {
+    position: relative;
+    display: inline-block;
+    transform: translateX(-100%);
+}
+
+/*LAYOUT WORK MENU*/
+
+.work-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work-menu li {
+    flex: 0 1 50%;
+    position: relative;
+}
+
+@media only screen and (max-width:600px) {
+
+    .work-menu li {
+        flex: 1 1 100%;
+    }
+}
+
+.work-menu img {
+    height: 100%;
+}
+
+.work-menu a {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 40%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.work-menu * {
+    color: black;
+
+}
+
+@media (hover: hover) {
+    .work-menu a {
+        opacity: 0;
+    }
+
+    .work-menu a:hover {
+        opacity: 1;
+    }
+}
+
+/*LAYOUT work > project pages*/
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.col {
+    flex: 1 1 50%;
+}
+
+
+.project-wrapper > .row,
+.project-wrapper > img {
+    padding: 0px 20px;
+}
+
+
+/*align items in row that are a direct child*/
+.project-wrapper > .row {
+    align-items: center;
+}
+
+#nmdr .row .col:first-child,
+#cadeira > .row > .col:first-child,
+#terra > .row:first-of-type > .col:first-child,
+#interior > .row:first-of-type > .col:last-child {
+    flex: 0 1 38%;
+}
+
+#interior > .row:nth-of-type(2) > .col:last-child {
+    flex: 0 1 30%;
+}
+
+
+
+@media only screen and (max-width:768px) {
+    .project-wrapper > .row,
+    .project-wrapper > img {
+        padding: 0;
+    }
+}
+
+
+@media only screen and (max-width:600px) {
+    .project-wrapper > .row {
+        display: block;
+    }
+}
